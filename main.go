@@ -10,6 +10,8 @@ var availableSymbols = []string{"BTC", "DOT", "SOL", "SHIB", "ETH", "THETA"}
 var actualPrices = make(map[string]float64)
 
 func main() {
+	pricesChannel := make(chan )
+
 	ticker := time.NewTicker(1 * time.Second)
 	for t := range ticker.C {
 		updatePrice("BTC")
